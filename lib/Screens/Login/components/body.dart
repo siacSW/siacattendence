@@ -32,7 +32,7 @@ class Body extends StatelessWidget {
       ArabicName = '';
       db.getConnection().then((conn) {
         String sql =
-            'select arabic_name from employees where code = $HrCode and national_id = $NationalID;';
+            'select code from employees where code = $HrCode and national_id = $NationalID ;';
         conn.query(sql).then((results) {
           for (var row in results) {
             ArabicName = row[0];
